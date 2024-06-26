@@ -1,0 +1,25 @@
+:root {
+color-scheme: dark;
+--red-pantone: 230 57 70;
+--honeydew: 241 250 238;
+--non-photo-blue: 168 218 220;
+--cerulean: 69 123 157;
+--berkeley-blue: 4 5 5;
+--darkest-blue: 8 20 36;
+--css-red-pantone: rgb(230 57 70);
+--css-honeydew: rgb(241 250 238);
+--css-non-photo-blue: rgb(168 218 220);
+--css-cerulean: rgb(69 123 157);
+--css-berkeley-blue: rgb(4 5 5);
+--css-darkest-blue: rgb(8 20 36);
+--headings-xl: clamp(1.7rem, 2.1vw, 2.2rem);
+--headings-lg: clamp(1.4rem, 1.7vw, 1.9rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Outfit Variable", sans-serif;
+}
+body {
+  background-color: var(--css-darkest-blue);
+}
