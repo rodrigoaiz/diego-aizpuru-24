@@ -1,0 +1,59 @@
+---
+import Logo from "@/components/Logo.astro";
+import config from "@/config/config.json";
+import menu from "@/config/menu.json";
+import social from "@/config/social.json";
+const { footer }: { footer: { name: string; url: string }[] } = menu;
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-lightblue mt-10">
+  <div class="container mx-auto text-darkblue">
+    <div class="flex flex-col md:flex-row justify-around items-center py-10">
+      <div class="text-center md:mb-0 md:text-left">
+        <div class="w-ful">
+          <a href="/"><Logo class="h-10 md:h-14 hover:scale-110 transition-all ease-in-out" /></a>
+        </div>
+        <div class="w-full flex gap-2 mt-7 items-center justify-between">
+        </div>
+      </div>
+      <div class="text-center md:mb-0">
+        <ul>
+          {
+            footer.map((menu) => (
+              <li class="m-3 inline-block">
+                <a class="hover:text-blue transition-all" href={menu.url}>
+                  {menu.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul>
+          {
+            social.main.map((socialItem) => (
+              <li class="m-3 inline-block">
+                <a
+                  class="hover:text-blue transition-all"
+                  href={socialItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                  <Icon name={socialItem.icon} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-border py-7 border-dark">
+    <div class="container text-center text-dark mx-auto">
+      <p set:html={config.params.copyright} />
+    </div>
+  </div>
+</footer>
