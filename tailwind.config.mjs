@@ -11,7 +11,13 @@ export default {
       'xl': '1280px',
       '2xl': '1536px',
     },
-		extend: {},
+		extend: {
+      colors: {
+        light: 'rgb(var(--light) / <alpha-value>)',
+        dark: 'rgb(var(--darkest-blue) / <alpha-value>)',
+        red: 'rgb(var(--red) / <alpha-value>)',
+      }
+    },
 	},
 	plugins: [
 		animations,

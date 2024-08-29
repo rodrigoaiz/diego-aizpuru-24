@@ -1,24 +1,43 @@
 :root {
 color-scheme: dark;
---red-own: 230 57 70;
---ownwhite: 241 250 238;
+--red: 230 57 70;
+--light: 241 250 238;
 --darkest-blue: 8 20 36;
 --css-red-own: rgb(230 57 70);
 --css-ownwhite: rgb(241 250 238);
 --css-darkest-blue: rgb(8 20 36);
 --headings-xl: clamp(1.7rem, 2.1vw, 2.2rem);
 --headings-lg: clamp(1.4rem, 1.7vw, 1.9rem);
+--font-titulos: 'Roboto Slab Variable', serif;
+--font-cuerpo: 'Outfit Variable', sans-serif;
+--transition-smooth: ease-in-out 0.5s all;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: "Outfit Variable", sans-serif;
+  transition: ease-in-out 0.5s ;
 }
 body {
+  font-family: var(--font-cuerpo);
   background-color: var(--css-ownwhite);
   color: var(--css-darkest-blue);
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
   padding: 0;
+}
+
+.menu{
+  font-family: var(--font-titulos);
+  color: var(--css-darkest-blue);
+  transition: var(--transition-smooth);
+  a {
+    color: var(--css-darkest-blue);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    &:hover {
+      color: var(--css-red-own);
+    }
+  }
 }
