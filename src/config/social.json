@@ -3,22 +3,17 @@
     {
       "name": "facebook",
       "icon": "bi:facebook",
-      "link": "https://www.facebook.com/portalacademico"
-    },
-    {
-      "name": "twitter",
-      "icon": "bi:twitter-x",
-      "link": "https://twitter.com/academico_cch"
+      "link": "https://www.facebook.com/diegoaizarte"
     },
     {
       "name": "youtube",
       "icon": "bi:youtube",
-      "link": "https://www.youtube.com/user/portalacademicocch"
+      "link": "https://www.youtube.com/user/@diegoaizpuru7631"
     },
     {
       "name": "instagram",
       "icon": "bi:instagram",
-      "link": "https://www.instagram.com/portalacademicocch"
+      "link": "https://www.instagram.com/diego.aizpuru"
     }
   ]
 }

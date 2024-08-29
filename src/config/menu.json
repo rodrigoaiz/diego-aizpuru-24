@@ -5,23 +5,12 @@
       "url": "/"
     },
     {
+      "name": "Bio",
+      "url": "/bio"
+    },
+    {
       "name": "Artwrok",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Oil",
-          "url": "/artworl/oil"
-        },
-        {
-          "name": "Waercolor",
-          "url": "/asignaturas/watercolor"
-        },
-        {
-          "name": "Acrylic",
-          "url": "/asignaturas/acrylic"
-        }
-      ]
+      "url": "/art"
     },
     {
       "name": "Exhibitions",
@@ -38,12 +27,12 @@
   ],
   "footer": [
     {
-      "name": "Acerca de",
-      "url": "/acerca-de"
+      "name": "Bio",
+      "url": "/bio"
     },
     {
-      "name": "Créditos",
-      "url": "/creditos"
+      "name": "Contácto",
+      "url": "/contact"
     }
   ]
 }
