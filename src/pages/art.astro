@@ -1,0 +1,21 @@
+---
+interface Art {
+  name: string;
+  technique: string;
+  image: string;
+}
+import Layout from '@/layouts/Layout.astro';
+import { art } from "@art";
+---
+<Layout title="Artwork">
+  <h1>Obra</h1>
+  <ul>
+    {art.map((item) => (
+      <li>
+        <h2>{item.name}</h2>
+        <p>{item.technique}</p>
+        <img src={item.image} alt={item.name} />
+      </li>
+    ))}
+
+</Layout>

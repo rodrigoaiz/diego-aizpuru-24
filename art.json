@@ -1,7 +1,7 @@
 {
   "me":{
     "description": "<p>Diego Aizpuru es un artista que explora las posibilidades de los paisajes , el color, sus tonos y la memoria.</p> <p>En su trabajo, forma piezas bidimensionales que exploran las posibilidades de la materia y la figura a través de superposiciones de elementos y colores, jugando con las transparencias, transferencias y contrastes.</p> <p>El modo en el que experimenta con estos componentes nos lleva a pensar en la potencialidad de las formas, en las posibilidades infinitas y el agotamiento del recurso en la búsqueda de nuevos paisajes por existir. Se refiere constantemente a los fragmentos del inconsciente en el que construimos imágenes a las que recurrimos para recordarnos.</p> <p>En las formas del trabajo de Diego también actúa la temperatura y los espacios físicos contenidos por lienzos, como una ventana que permite una escapada de nosotros y un avistamiento a un recuerdo, un sentimiento, un espacio o un pensamiento, que pudo o no existir, que existirá o nunca será así.</p> <p>Pasado y futuro actuando en el presente. Los temas que explora son especialmente pertinentes para nuestra experiencia del mundo actual, ya que el pensamiento constante de lo latentemente posible existe en la mente humana desde distintas perspectivas y disciplinas como la filosofía, la ciencia, lo social, la economía, etcétera y que se convierten en acciones y pensamientos en la búsqueda de nuevas probabilidades desde siempre.</p> <p>El lenguaje pictórico de Diego propone nuevos recorridos con lo conocido y lo que está por aparecer, como un escape y recordatorio de lo que tal vez somos, fuimos o pudimos ser.</p>",
-    "photo": "/me.webp"
+    "image": "/me.webp"
   },
   "art": [
     {
@@ -10,7 +10,7 @@
       "size": "28 X 35.5 cm",
       "year": "2023",
       "price": "MXN 8,500.00",
-      "photo": "art/aquellas-nubes.webp",
+      "image": "art/aquellas-nubes.webp",
       "thumbnail": "art/aquellas-nubes-thumb.webp"
     },
     {
@@ -19,7 +19,7 @@
       "size": "180 x 120 cm",
       "year": "2024",
       "price": "MXN 25,000.00",
-      "photo": "art/ensoñacion-de-verano-1.webp",
+      "image": "art/ensoñacion-de-verano-1.webp",
       "thumbnail": "art/ensoñacion-de-verano-1-thumb.webp"
     },
     {
@@ -28,7 +28,7 @@
       "size": "30 X 30 cm",
       "year": "2023",
       "price": "MXN 8,000.00",
-      "photo": "art/aquel-sueno.webp",
+      "image": "art/aquel-sueno.webp",
       "thumbnail": "art/aquel-sueno-thumb.webp"
     },
     {
@@ -37,7 +37,7 @@
       "size": "100 X 80 cm",
       "year": "2024",
       "price": "MXN 17,500.00",
-      "photo": "art/aquel-sueno-que-aun-recordamos.webp",
+      "image": "art/aquel-sueno-que-aun-recordamos.webp",
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-thumb.webp"
     },
     {
@@ -46,7 +46,7 @@
       "size": "29 x 19 cm",
       "year": "2021",
       "price": "MXN 6,000.00",
-      "photo": "art/aquello-que-no-recordamos.webp",
+      "image": "art/aquello-que-no-recordamos.webp",
       "thumbnail": "art/aquello-que-no-recordamos-thumb.webp"
     },
     {
@@ -55,7 +55,7 @@
       "size": "35.5 x 28 cm",
       "year": "2023",
       "price": "MXN 8,500.00",
-      "photo": "art/umbral-hacia-un-recuerdo.webp",
+      "image": "art/umbral-hacia-un-recuerdo.webp",
       "thumbnail": "art/umbral-hacia-un-recuerdo-thumb.webp"
     },
     {
@@ -64,7 +64,7 @@
       "size": "29 x 29 cm",
       "year": "2021",
       "price": "MXN 6,000.00",
-      "photo": "art/aquello-que-no-recordamos-2.webp",
+      "image": "art/aquello-que-no-recordamos-2.webp",
       "thumbnail": "art/aquello-que-no-recordamos-2-thumb.webp"
     },
     {
@@ -73,7 +73,7 @@
       "size": "120 x 180 cm",
       "year": "2022",
       "price": "MXN 25,000.00",
-      "photo": "art/espacios-y-momentos-fugaces-5.webp",
+      "image": "art/espacios-y-momentos-fugaces-5.webp",
       "thumbnail": "art/espacios-y-momentos-fugaces-5-thumb.webp"
     },
     {
@@ -82,7 +82,7 @@
       "size": "19 x 29 cm",
       "year": "2021",
       "price": "MXN 6,000.00",
-      "photo": "art/aquello-que-no-recordamos-3.webp",
+      "image": "art/aquello-que-no-recordamos-3.webp",
       "thumbnail": "art/aquello-que-no-recordamos-3-thumb.webp"
     },
     {
@@ -91,7 +91,7 @@
       "size": "28 x 35.5 cm",
       "year": "2023",
       "price": "MXN 8,500.00",
-      "photo": "art/los-lugares-que-no-recordamos-3.webp",
+      "image": "art/los-lugares-que-no-recordamos-3.webp",
       "thumbnail": "art/los-lugares-que-no-recordamos-3-thumb.webp"
     },
     {
@@ -100,7 +100,7 @@
       "size": "45 x 65 cm",
       "year": "2022",
       "price": "MXN 8,500.00",
-      "photo": "art/aquel-sueno-que-no-se-presento.webp",
+      "image": "art/aquel-sueno-que-no-se-presento.webp",
       "thumbnail": "art/aquel-sueno-que-no-se-presento-thumb.webp"
     },
     {
@@ -109,7 +109,7 @@
       "size": "65 x 55 cm",
       "year": "2022",
       "price": "MXN 7,600.00",
-      "photo": "art/aquel-sueno-que-no-se-presento-2.webp",
+      "image": "art/aquel-sueno-que-no-se-presento-2.webp",
       "thumbnail": "art/aquel-sueno-que-no-se-presento-2-thumb.webp"
     },
     {
@@ -118,7 +118,7 @@
       "size": "120 x 180 cm",
       "year": "2022",
       "price": "MXN 25,000.00",
-      "photo": "art/espacios-y-momentos-fugaces-6.webp",
+      "image": "art/espacios-y-momentos-fugaces-6.webp",
       "thumbnail": "art/espacios-y-momentos-fugaces-6-thumb.webp"
     },
     {
@@ -127,7 +127,7 @@
       "size": "48 x 68 cm",
       "year": "2021",
       "price": "MXN 7,650.00",
-      "photo": "art/las-personas-que-no-recordamos.webp",
+      "image": "art/las-personas-que-no-recordamos.webp",
       "thumbnail": "art/las-personas-que-no-recordamos-thumb.webp"
     },
     {
@@ -136,7 +136,7 @@
       "size": "65 x 46 cm",
       "year": "2022",
       "price": "MXN 7,000.00",
-      "photo": "art/los-lugares-que-no-recordamos.webp",
+      "image": "art/los-lugares-que-no-recordamos.webp",
       "thumbnail": "art/los-lugares-que-no-recordamos-thumb.webp"
     },
     {
@@ -145,7 +145,7 @@
       "size": "31 x 41 cm",
       "year": "2022",
       "price": "MXN 7,000.00",
-      "photo": "art/aquel-sueno-que-no-se-presento-5.webp",
+      "image": "art/aquel-sueno-que-no-se-presento-5.webp",
       "thumbnail": "art/aquel-sueno-que-no-se-presento-5-thumb.webp"
     },
     {
@@ -154,7 +154,7 @@
       "size": "180 x 120 cm",
       "year": "2022",
       "price": "MXN 25,000.00",
-      "photo": "art/espacios-y-momentos-fugaces-7.webp",
+      "image": "art/espacios-y-momentos-fugaces-7.webp",
       "thumbnail": "art/espacios-y-momentos-fugaces-7-thumb.webp"
     },
     {
@@ -163,7 +163,7 @@
       "size": "100 X 80 cm",
       "year": "2024",
       "price": "MXN 17,500.00",
-      "photo": "art/aquel-sueno-que-aun-recordamos-2.webp",
+      "image": "art/aquel-sueno-que-aun-recordamos-2.webp",
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-2-thumb.webp"
     },
     {
@@ -172,7 +172,7 @@
       "size": "31 x 41 cm",
       "year": "2022",
       "price": "MXN 6,500.00",
-      "photo": "art/las-montañas-caminan-4.webp",
+      "image": "art/las-montañas-caminan-4.webp",
       "thumbnail": "art/las-montañas-caminan-4-thumb.webp"
     },
     {
@@ -181,7 +181,7 @@
       "size": "41 x 31 cm",
       "year": "2022",
       "price": "MXN 6,500.00",
-      "photo": "art/nada-realmente-termina-2.webp",
+      "image": "art/nada-realmente-termina-2.webp",
       "thumbnail": "art/nada-realmente-termina-2-thumb.webp"
     },
     {
@@ -190,7 +190,7 @@
       "size": "41 x 31 cm",
       "year": "2022",
       "price": "MXN 6,500.00",
-      "photo": "art/nada-realmente-termina-3.webp",
+      "image": "art/nada-realmente-termina-3.webp",
       "thumbnail": "art/nada-realmente-termina-3-thumb.webp"
     },
     {
@@ -199,7 +199,7 @@
       "size": "28 x 35.5 cm",
       "year": "2023",
       "price": "MXN 8,500.00",
-      "photo": "art/los-lugares-que-no-recordamos-4.webp",
+      "image": "art/los-lugares-que-no-recordamos-4.webp",
       "thumbnail": "art/los-lugares-que-no-recordamos-4-thumb.webp"
     },
     {
@@ -208,7 +208,7 @@
       "size": "31 x 41 cm",
       "year": "2022",
       "price": "MXN 7,000.00",
-      "photo": "art/aquel-sueno-que-no-se-presento-5.webp",
+      "image": "art/aquel-sueno-que-no-se-presento-5.webp",
       "thumbnail": "art/aquel-sueno-que-no-se-presento-5-thumb.webp"
     },
     {
@@ -217,7 +217,7 @@
       "size": "65 x 45 cm",
       "year": "2022",
       "price": "MXN 7,000.00",
-      "photo": "art/aquel-sueno-que-no-se-presento-3.webp",
+      "image": "art/aquel-sueno-que-no-se-presento-3.webp",
       "thumbnail": "art/aquel-sueno-que-no-se-presento-3-thumb.webp"
     },
     {
@@ -226,7 +226,7 @@
       "size": "34 x 43 cm",
       "year": "2023",
       "price": "MXN 7,000.00",
-      "photo": "art/umbral-hacia-un-recuerdo-6.webp",
+      "image": "art/umbral-hacia-un-recuerdo-6.webp",
       "thumbnail": "art/umbral-hacia-un-recuerdo-6-thumb.webp"
     },
     {
@@ -235,7 +235,7 @@
       "size": "80 x 100 cm",
       "year": "2024",
       "price": "MXN 17,500.00",
-      "photo": "art/aquel-sueno-que-aun-recordamos-3.webp",
+      "image": "art/aquel-sueno-que-aun-recordamos-3.webp",
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-3-thumb.webp"
     },
     {
@@ -244,7 +244,7 @@
       "size": "180 x 120 cm",
       "year": "2024",
       "price": "MXN 25,500.00",
-      "photo": "art/ensoñacion-de-verano-1.webp",
+      "image": "art/ensoñacion-de-verano-1.webp",
       "thumbnail": "art/ensoñacion-de-verano-1-thumb.webp"
     },
     {
@@ -253,7 +253,7 @@
       "size": "100 x 80 cm",
       "year": "2024",
       "price": "MXN 17,500.00",
-      "photo": "art/aquel-sueno-que-aun-recordamos-4.webp",
+      "image": "art/aquel-sueno-que-aun-recordamos-4.webp",
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-4-thumb.webp"
     },
     {
@@ -262,7 +262,7 @@
       "size": "65 x 46 cm",
       "year": "2022",
       "price": "Colección privada",
-      "photo": "art/los-momentos-que-no-recordamos.webp",
+      "image": "art/los-momentos-que-no-recordamos.webp",
       "thumbnail": "art/los-momentos-que-no-recordamos-thumb.webp"
     },
     {
@@ -271,7 +271,7 @@
       "size": "45 x 65 cm",
       "year": "2023",
       "price": "MXN 7,000.00",
-      "photo": "art/umbral-hacia-un-recuerdo-5.webp",
+      "image": "art/umbral-hacia-un-recuerdo-5.webp",
       "thumbnail": "art/umbral-hacia-un-recuerdo-5-thumb.webp"
     }
   ],
@@ -279,7 +279,7 @@
     "name": "Diego Iván Aizpuru Parra",
     "profession": "Artista visual",
     "description": "<p>Ha egresado de la licenciatura en Artes Visuales por parte de la Facultad de Artes y Diseño de la UNAM, con orientación a la producción y desarrollo de productos artísticos culturales.</p> <p>Cuenta con más de 5 años de experiencia en el medio artístico, tanto como productor como también gestor e intermediario dentro y fuera de eventos culturales, cuenta con una amplia experiencia como asistente de taller y asistente de montaje.</p> <p>Ha participado en distintas exposiciones colectivas, y dos exposiciones individuales en la ciudad de México, de las cuales han sido cobijadas por universidades , espacios alternativos y galerías. Actualmente está cursando la Maestría en Artes Visuales en la UNAM.</p>",
-    "photo": "/bio.webp"
+    "image": "/bio.webp"
   },
   "contact":{
     "email": "diegoaizarte@gmail.com",

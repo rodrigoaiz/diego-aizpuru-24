@@ -1,7 +1,7 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "Inicio",
       "url": "/"
     },
     {
@@ -9,19 +9,19 @@
       "url": "/bio"
     },
     {
-      "name": "Artwrok",
+      "name": "Obra",
       "url": "/art"
     },
     {
-      "name": "Exhibitions",
+      "name": "Exposiciones",
       "url": "/exhibitions"
     },
     {
-      "name": "News",
+      "name": "Noticias",
       "url": "/news"
     },
     {
-      "name": "Contact",
+      "name": "Contácto",
       "url": "/contact"
     }
   ],
