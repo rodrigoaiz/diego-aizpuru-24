@@ -5,6 +5,7 @@
   },
   "art": [
     {
+      "id": 1,
       "name": "Aquellas nubes que son solo montañas",
       "technique": "Óleo sobre tela",
       "size": "28 X 35.5 cm",
@@ -14,6 +15,7 @@
       "thumbnail": "art/aquellas-nubes-thumb.webp"
     },
     {
+      "id": 2,
       "name": "Ensoñación de verano #1",
       "technique": "Óleo sobre tela",
       "size": "180 x 120 cm",
@@ -23,6 +25,7 @@
       "thumbnail": "art/ensonacion-de-verano-1-thumb.webp"
     },
     {
+      "id": 3,
       "name": "Tiraje Aquel sueño 1 - 20",
       "technique": "Aguatinta y monotipo sobre papel de algodón",
       "size": "30 X 30 cm",
@@ -32,6 +35,7 @@
       "thumbnail": "art/aquel-sueno-a.webp"
     },
     {
+      "id": 4,
       "name": "Aquel sueño que aún recordamos #1",
       "technique": "Monotipo sobre papel de algodón",
       "size": "100 X 80 cm",
@@ -41,6 +45,7 @@
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-1-thumb.webp"
     },
     {
+      "id": 5,
       "name": "Aquello que no recordamos #1",
       "technique": "Grafito y monotipo sobre papel algodón",
       "size": "29 x 19 cm",
@@ -50,6 +55,7 @@
       "thumbnail": "art/aquello-que-no-recordamos-thumb.webp"
     },
     {
+      "id": 6,
       "name": "Umbral hacia un recuerdo #1",
       "technique": "Óleo sobre tela",
       "size": "35.5 x 28 cm",
@@ -59,6 +65,7 @@
       "thumbnail": "art/umbral-hacia-un-recuerdo-thumb.webp"
     },
     {
+      "id": 7,
       "name": "Aquello que no recordamos #2",
       "technique": "Grafito y monotipo sobre papel algodón",
       "size": "29 x 29 cm",
@@ -68,6 +75,7 @@
       "thumbnail": "art/aquello-que-no-recordamos-2-thumb.webp"
     },
     {
+      "id": 8,
       "name": "Espacios y momentos fugaces #5",
       "technique": "Óleo sobre canvas",
       "size": "120 x 180 cm",
@@ -77,6 +85,7 @@
       "thumbnail": "art/espacios-y-momentos-fugaces-5-thumb.webp"
     },
     {
+      "id": 9,
       "name": "Aquello que no recordamos #3",
       "technique": "Grafito y monotipo sobre papel algodón",
       "size": "19 x 29 cm",
@@ -86,6 +95,7 @@
       "thumbnail": "art/aquello-que-no-recordamos-3-thumb.webp"
     },
     {
+      "id": 10,
       "name": "Los lugares que no recordamos #3",
       "technique": "Óleo sobre tela",
       "size": "28 x 35.5 cm",
@@ -95,6 +105,7 @@
       "thumbnail": "art/los-lugares-que-no-recordamos-3-thumb.webp"
     },
     {
+      "id": 11,
       "name": "Aquel sueño que no se presentó #1",
       "technique": "Monotipo sobre papel de algodón",
       "size": "45 x 65 cm",
@@ -104,6 +115,7 @@
       "thumbnail": "art/aquel-sueno-que-no-se-presento-thumb.webp"
     },
     {
+      "id": 12,
       "name": "Aquel sueño que no se presentó #2",
       "technique": "Monotipo sobre papel de algodón",
       "size": "65 x 55 cm",
@@ -113,6 +125,7 @@
       "thumbnail": "art/aquel-sueno-que-no-se-presento-2-thumb.webp"
     },
     {
+      "id": 13,
       "name": "Espacios y momentos fugaces #6",
       "technique": "Óleo sobre tela",
       "size": "120 x 180 cm",
@@ -122,6 +135,7 @@
       "thumbnail": "art/espacios-y-momentos-fugaces-6-thumb.webp"
     },
     {
+      "id": 14,
       "name": "Las personas que no recordamos",
       "technique": "Monotipo y óleo sobre papel de algodón",
       "size": "48 x 68 cm",
@@ -131,6 +145,7 @@
       "thumbnail": "art/las-personas-que-no-recordamos-thumb.webp"
     },
     {
+      "id": 15,
       "name": "Los lugares que no recordamos",
       "technique": "Monotipo y grafito sobre papel de algodón",
       "size": "65 x 46 cm",
@@ -140,6 +155,7 @@
       "thumbnail": "art/los-lugares-que-no-recordamos-thumb.webp"
     },
     {
+      "id": 16,
       "name": "Aquel sueño que no se presentó #5",
       "technique": "Monotipo sobre papel de algodón",
       "size": "31 x 41 cm",
@@ -149,6 +165,7 @@
       "thumbnail": "art/aquel-sueno-que-no-se-presento-5-2-thumb.webp"
     },
     {
+      "id": 17,
       "name": "Espacios y momentos fugaces #7",
       "technique": "Óleo sobre canvas",
       "size": "180 x 120 cm",
@@ -158,6 +175,7 @@
       "thumbnail": "art/espacios-y-momentos-fugaces-7-thumb.webp"
     },
     {
+      "id": 18,
       "name": "Aquel sueño que aún recordamos #2",
       "technique": "Monotipo sobre papel de algodón",
       "size": "100 X 80 cm",
@@ -167,6 +185,7 @@
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-2-thumb.webp"
     },
     {
+      "id": 19,
       "name": "¿Las montañas caminan? #4",
       "technique": "Grafito y monotipo sobre papel algodón",
       "size": "31 x 41 cm",
@@ -176,6 +195,7 @@
       "thumbnail": "art/las-montanas-caminan-4-thumb.webp"
     },
     {
+      "id": 20,
       "name": "Nada realmente termina #2",
       "technique": "Grafito y monotipo sobre papel algodón",
       "size": "41 x 31 cm",
@@ -185,6 +205,7 @@
       "thumbnail": "art/nada-realmente-termina-2-thumb.webp"
     },
     {
+      "id": 21,
       "name": "Nada realmente termina #3",
       "technique": "Grafito y monotipo sobre papel algodón",
       "size": "41 x 31 cm",
@@ -194,6 +215,7 @@
       "thumbnail": "art/nada-realmente-termina-3-thumb.webp"
     },
     {
+      "id": 22,
       "name": "Los lugares que no recordamos #4",
       "technique": "Óleo sobre tela",
       "size": "28 x 35.5 cm",
@@ -203,6 +225,7 @@
       "thumbnail": "art/los-lugares-que-no-recordamos-4-thumb.webp"
     },
     {
+      "id": 23,
       "name": "Aquel sueño que no se presento #5",
       "technique": "Monotipo sobre papel de algodón",
       "size": "31 x 41 cm",
@@ -212,6 +235,7 @@
       "thumbnail": "art/aquel-sueno-que-no-se-presento-5-1-thumb.webp"
     },
     {
+      "id": 24,
       "name": "Aquel sueño que no se presentó #3",
       "technique":"Grafito y monotipo sobre papel algodón",
       "size": "65 x 45 cm",
@@ -221,6 +245,7 @@
       "thumbnail": "art/aquel-sueno-que-no-se-presento-3-thumb.webp"
     },
     {
+      "id": 25,
       "name": "Umbral hacia un recuerdo #6",
       "technique":"Monotipo sobre papel de algodón",
       "size": "34 x 43 cm",
@@ -230,6 +255,7 @@
       "thumbnail": "art/umbral-hacia-un-recuerdo-6-thumb.webp"
     },
     {
+      "id": 26,
       "name": "Aquel sueño que aún recordamos #3",
       "technique":"Monotipo sobre papel de algodón",
       "size": "80 x 100 cm",
@@ -239,6 +265,7 @@
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-3-thumb.webp"
     },
     {
+      "id": 27,
       "name": "Ensoñación de verano #1",
       "technique":"Óleo sobre tela",
       "size": "180 x 120 cm",
@@ -248,6 +275,7 @@
       "thumbnail": "art/ensonacion-de-verano-1b-thumb.webp"
     },
     {
+      "id": 28,
       "name": "Aquel sueño que aún recordamos #4",
       "technique":"Monotipo sobre papel de algodón",
       "size": "100 x 80 cm",
@@ -257,6 +285,7 @@
       "thumbnail": "art/aquel-sueno-que-aun-recordamos-4-thumb.webp"
     },
     {
+      "id": 29,
       "name": "Los momentos que no recordamos",
       "technique":"Monotipo y grafito sobre papel de algodón",
       "size": "65 x 46 cm",
@@ -266,6 +295,7 @@
       "thumbnail": "art/los-momentos-que-no-recordamos-thumb.webp"
     },
     {
+      "id": 30,
       "name": "Umbral hacia un recuerdo #5",
       "technique":"Monotipo sobre papel de algodón",
       "size": "45 x 65 cm",

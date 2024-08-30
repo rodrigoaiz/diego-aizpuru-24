@@ -1,0 +1,65 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { art } from "@art";
+
+/* interface ArtItem {
+  id: number;
+  name: string;
+  technique: string;
+  size: string;
+  year: string;
+  price: string;
+  image: string;
+  thumbnail: string;
+}
+
+export async function getStaticPaths() {
+  const artItems: ArtItem[] = art.map((item) => ({
+    ...item
+  }));
+
+  const paths = artItems.map((item) => ({
+    params: { id: item.id.toString() },
+  }));
+
+  return {
+    paths, // Asegúrate de que paths es un array
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: { params: { id: string } }) {
+  const artItems: ArtItem[] = art.map((item) => ({
+    ...item
+  }));
+
+  const item = artItems.find((artItem) => artItem.id.toString() === params.id) as ArtItem;
+  return {
+    props: {
+      item,
+    },
+  };
+}
+
+const { item } = Astro.props as { item: ArtItem }; */
+---
+<!-- <Layout title={item.name}>
+  <div class="max-w-screen-xl mx-auto">
+    <h2 class="text-3xl my-5 uppercase">{item.name}</h2>
+    <div class="grid grid-cols-4 gap-3">
+      <article class="col-span-4">
+        <header>
+          <img class="saturate-0 hover:saturate-100 ease-in-out duration-200" loading="lazy" src={item.image} alt={item.name} />
+        </header>
+        <footer>
+          <h3>{item.name}</h3>
+          <p>{item.technique}</p>
+          <p>{item.size}</p>
+          <p>{item.year}</p>
+          <p>{item.price}</p>
+        </footer>
+      </article>
+    </div>
+  </div>
+</Layout>
+ -->

@@ -4,6 +4,7 @@ interface Art {
   technique: string;
   image: string;
   thumbnail: string;
+  id: number;
 }
 import Layout from '@/layouts/Layout.astro';
 import { art } from "@art";
@@ -13,15 +14,17 @@ import { art } from "@art";
     <h2 class="text-3xl my-5 uppercase">Obra</h2>
     <div class="grid grid-cols-4 gap-3">
       {art.map((item) => (
-        <article class="col-span-1">
-          <header>
-            <img class="saturate-0 hover:saturate-100 ease-in-out duration-200" loading="lazy" src={item.thumbnail} alt={item.name} />
-          </header>
-          <footer>
-            <h3>{item.name}</h3>
-            <p>{item.technique}</p>
-          </footer>
-        </article>
+        <a href={"/art/" + item.id.toString()}>
+          <article class="col-span-1">
+            <header>
+              <img class="saturate-0 hover:saturate-100 ease-in-out duration-200" loading="lazy" src={item.thumbnail} alt={item.name} />
+            </header>
+            <footer>
+              <h3>{item.name}</h3>
+              <p>{item.technique}</p>
+            </footer>
+          </article>
+        </a>
       ))}
     </div>
   </div>
