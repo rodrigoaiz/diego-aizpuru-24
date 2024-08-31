@@ -31,13 +31,14 @@ if (!item) {
 <Layout title={item.name}>
   <div class="max-w-screen-xl mx-auto">
     <h2 class="text-3xl my-5 uppercase">{item.name}</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      <img class="saturate-0 hover:saturate-100 ease-in-out duration-200" loading="lazy" src={"../" + item.image} alt={item.name} />
+    <div class="grid grid-cols-4 gap-3  mx-auto">
+      <img class="col-span-2" loading="lazy" src={"../" + item.image} alt={item.name} />
       <div>
         <p><strong>Técnica:</strong> {item.technique}</p>
         <p><strong>Tamaño:</strong> {item.size}</p>
         <p><strong>Año:</strong> {item.year}</p>
         <p><strong>Precio:</strong> {item.price}</p>
       </div>
+    </div>
   </div>
 </Layout>

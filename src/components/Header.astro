@@ -1,6 +1,5 @@
 ---
 import Logo from "@/components/Logo.astro";
-import LogoM from "@/components/LogoM.astro";
 import menu from "@/config/menu.json";
 export interface ChildNavigationLink {
   name: string;
@@ -26,7 +25,6 @@ const { pathname } = Astro.url;
       <!-- logo -->
       <div class="order-0">
         <a href="/"><Logo class="hidden md:block h-10 w-15" /></a>
-        <a href="/"><LogoM class="md:hidden size-10" /></a>
       </div>
       <ul
         id="nav-menu"
