@@ -1,9 +1,15 @@
 ---
+interface Me {
+  description: string;
+  image: string;
+}
+
+import {me} from "@art";
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Diego Aizpuru Artista Visual">
-	<div class="max-w-screen-xl mx-auto">
+  <div class="max-w-screen-lg mx-auto">
     <img src="/art/hero.webp" alt="">
   </div>
 </Layout>

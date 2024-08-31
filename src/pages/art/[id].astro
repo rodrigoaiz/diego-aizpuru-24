@@ -10,7 +10,6 @@ interface ArtItem {
   year: string;
   price: string;
   image: string;
-  thumbnail: string;
 }
 
 export async function getStaticPaths() {
@@ -30,8 +29,11 @@ if (!item) {
 ---
 <Layout title={item.name}>
   <div class="max-w-screen-xl mx-auto">
-    <h2 class="text-3xl my-5 uppercase">{item.name}</h2>
-    <div class="grid grid-cols-4 gap-3  mx-auto">
+    <h2 class="text-3xl mt-5 uppercase">{item.name}</h2>
+    <article>
+      <a class="hover:text-red" href="/">Inicio</a> / <a class="hover:text-red" href="../art">Obra</a> / <span class="underline">{item.name}</span>
+    </article>
+    <div class="grid grid-cols-4 gap-3 mt-4  mx-auto">
       <img class="col-span-2" loading="lazy" src={"../" + item.image} alt={item.name} />
       <div>
         <p><strong>Técnica:</strong> {item.technique}</p>
@@ -39,6 +41,6 @@ if (!item) {
         <p><strong>Año:</strong> {item.year}</p>
         <p><strong>Precio:</strong> {item.price}</p>
       </div>
-    </div>
+    </div>q
   </div>
 </Layout>

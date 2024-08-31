@@ -24,11 +24,13 @@ const {
     />
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="min-h-screen flex flex-col justify-between">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer  />
+    </div>
     <script is:inline src="/node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>

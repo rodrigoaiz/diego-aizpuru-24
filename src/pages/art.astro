@@ -12,7 +12,7 @@ import { art } from "@art";
 <Layout title="Artwork">
   <div class="max-w-screen-xl mx-auto">
     <h2 class="text-3xl my-5 uppercase">Obra</h2>
-    <div class="grid grid-cols-4 gap-3">
+    <div class="grid grid-cols-4 gap-5">
       {art.map((item) => (
         <a href={"/art/" + item.id.toString()}>
           <article class="col-span-1">
@@ -20,8 +20,7 @@ import { art } from "@art";
               <img class="saturate-0 hover:saturate-100 ease-in-out duration-200" loading="lazy" src={item.thumbnail} alt={item.name} />
             </header>
             <footer>
-              <h3>{item.name}</h3>
-              <p>{item.technique}</p>
+              <h3 class="font-light text-center text-base mt-1">{item.name}</h3>
             </footer>
           </article>
         </a>
