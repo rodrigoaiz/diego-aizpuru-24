@@ -41,6 +41,24 @@ if (!item) {
         <p><strong>Año:</strong> {item.year}</p>
         <p><strong>Precio:</strong> {item.price}</p>
       </div>
-    </div>q
+    </div>
+    <nav class="mx-auto mt-5 w-full items-center flex justify-center">
+      <div class="flex flex-row items-center">
+        {parseInt(id) > 1 && (
+          <a href={"/art/" + (parseInt(id) - 1).toString()} class="mr-2 font-light text-sm">Anterior</a>
+        )}
+        {art.map((item: ArtItem, index: number) => (
+          <a href={"/art/" + item.id.toString()}>
+            <article class={`size-7 bg-white border border-slate-400 text-xs flex items-center justify-center font-extralight ${item.id.toString() === id ? 'bg-red/40' : ''}`}>
+              {item.id}
+            </article>
+          </a>
+        ))}
+        {parseInt(id) < art.length && (
+          <a href={"/art/" + (parseInt(id) + 1).toString()} class="ml-2 font-light text-sm">Siguiente</a>
+        )}
+
+      </div>
+    </nav>
   </div>
 </Layout>

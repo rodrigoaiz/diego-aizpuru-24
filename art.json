@@ -12,7 +12,8 @@
       "year": "2023",
       "price": "MXN 8,500.00",
       "image": "art/aquellas-nubes.webp",
-      "thumbnail": "art/aquellas-nubes-thumb.webp"
+      "thumbnail": "art/aquellas-nubes-thumb.webp",
+      "landscape": true
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "year": "2024",
       "price": "MXN 25,000.00",
       "image": "art/ensonacion-de-verano-1.webp",
-      "thumbnail": "art/ensonacion-de-verano-1-thumb.webp"
+      "thumbnail": "art/ensonacion-de-verano-1-thumb.webp",
+      "landscape": false
     },
     {
       "id": 3,
@@ -32,7 +34,8 @@
       "year": "2023",
       "price": "MXN 8,000.00",
       "image": "art/aquel-sueno-a.webp",
-      "thumbnail": "art/aquel-sueno-a.webp"
+      "thumbnail": "art/aquel-sueno-a.webp",
+      "landscape": false
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "year": "2024",
       "price": "MXN 17,500.00",
       "image": "art/aquel-sueno-que-aun-recordamos-1.webp",
-      "thumbnail": "art/aquel-sueno-que-aun-recordamos-1-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-aun-recordamos-1-thumb.webp",
+      "landscape": false
     },
     {
       "id": 5,
@@ -52,7 +56,8 @@
       "year": "2021",
       "price": "MXN 6,000.00",
       "image": "art/aquello-que-no-recordamos.webp",
-      "thumbnail": "art/aquello-que-no-recordamos-thumb.webp"
+      "thumbnail": "art/aquello-que-no-recordamos-thumb.webp",
+      "landscape": false
     },
     {
       "id": 6,
@@ -62,7 +67,8 @@
       "year": "2023",
       "price": "MXN 8,500.00",
       "image": "art/umbral-hacia-un-recuerdo.webp",
-      "thumbnail": "art/umbral-hacia-un-recuerdo-thumb.webp"
+      "thumbnail": "art/umbral-hacia-un-recuerdo-thumb.webp",
+      "landscape": false
     },
     {
       "id": 7,
@@ -72,7 +78,8 @@
       "year": "2021",
       "price": "MXN 6,000.00",
       "image": "art/aquello-que-no-recordamos-2.webp",
-      "thumbnail": "art/aquello-que-no-recordamos-2-thumb.webp"
+      "thumbnail": "art/aquello-que-no-recordamos-2-thumb.webp",
+      "landscape": true
     },
     {
       "id": 8,
@@ -82,7 +89,8 @@
       "year": "2022",
       "price": "MXN 25,000.00",
       "image": "art/espacios-y-momentos-fugaces-5.webp",
-      "thumbnail": "art/espacios-y-momentos-fugaces-5-thumb.webp"
+      "thumbnail": "art/espacios-y-momentos-fugaces-5-thumb.webp",
+      "landscape": true
     },
     {
       "id": 9,
@@ -308,8 +316,8 @@
   "bio":{
     "name": "Diego Iván Aizpuru Parra",
     "profession": "Artista visual",
-    "description": "<p>Ha egresado de la licenciatura en Artes Visuales por parte de la Facultad de Artes y Diseño de la UNAM, con orientación a la producción y desarrollo de productos artísticos culturales.</p> <p>Cuenta con más de 5 años de experiencia en el medio artístico, tanto como productor como también gestor e intermediario dentro y fuera de eventos culturales, cuenta con una amplia experiencia como asistente de taller y asistente de montaje.</p> <p>Ha participado en distintas exposiciones colectivas, y dos exposiciones individuales en la ciudad de México, de las cuales han sido cobijadas por universidades , espacios alternativos y galerías. Actualmente está cursando la Maestría en Artes Visuales en la UNAM.</p>",
-    "image": "/bio.webp"
+    "description": "Ha egresado de la licenciatura en Artes Visuales por parte de la Facultad de Artes y Diseño de la UNAM, con orientación a la producción y desarrollo de productos artísticos culturales. Cuenta con más de 5 años de experiencia en el medio artístico, tanto como productor como también gestor e intermediario dentro y fuera de eventos culturales, cuenta con una amplia experiencia como asistente de taller y asistente de montaje. Ha participado en distintas exposiciones colectivas, y dos exposiciones individuales en la ciudad de México, de las cuales han sido cobijadas por universidades , espacios alternativos y galerías. Actualmente está cursando la Maestría en Artes Visuales en la UNAM.",
+    "image": "/me.webp"
   },
   "contact":{
     "email": "diegoaizarte@gmail.com",

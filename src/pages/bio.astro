@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { bio } from "@art"
+interface Bio {
+  bio: string;
+  image: string;
+}
+---
+<Layout>
+  <div class="max-w-screen-lg mx-auto">
+    <h2 class="text-3xl my-5 uppercase">Biografía</h2>
+    <h3>{bio.name}</h3>
+    <h3>{bio.profession}</h3>
+    <div class="grid grid-cols-3 gap-4">
+      <div>
+        <img src={bio.image} alt="Diego Aizpuru" class="w-full" />
+      </div>
+      <p class="col-span-2">{bio.description}</p>
+    </div>
+  </div>
+</Layout>
