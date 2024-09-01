@@ -29,8 +29,8 @@ if (!item) {
   throw new Error(`Item with id ${id} not found`);
 }
 ---
-<LightBox />
 <Layout title={item.name}>
+  <LightBox />
   <div class="max-w-screen-xl mx-auto">
     <h2 class="text-3xl mt-5 uppercase">{item.name}</h2>
     <article class="my-5">
