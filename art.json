@@ -100,7 +100,8 @@
       "year": "2021",
       "price": "MXN 6,000.00",
       "image": "art/aquello-que-no-recordamos-3.webp",
-      "thumbnail": "art/aquello-que-no-recordamos-3-thumb.webp"
+      "thumbnail": "art/aquello-que-no-recordamos-3-thumb.webp",
+      "landscape": true
     },
     {
       "id": 10,
@@ -110,7 +111,8 @@
       "year": "2023",
       "price": "MXN 8,500.00",
       "image": "art/los-lugares-que-no-recordamos-3.webp",
-      "thumbnail": "art/los-lugares-que-no-recordamos-3-thumb.webp"
+      "thumbnail": "art/los-lugares-que-no-recordamos-3-thumb.webp",
+      "landscape": true
     },
     {
       "id": 11,
@@ -120,7 +122,8 @@
       "year": "2022",
       "price": "MXN 8,500.00",
       "image": "art/aquel-sueno-que-no-se-presento.webp",
-      "thumbnail": "art/aquel-sueno-que-no-se-presento-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-no-se-presento-thumb.webp",
+      "landscape": true
     },
     {
       "id": 12,
@@ -130,7 +133,8 @@
       "year": "2022",
       "price": "MXN 7,600.00",
       "image": "art/aquel-sueno-que-no-se-presento-2.webp",
-      "thumbnail": "art/aquel-sueno-que-no-se-presento-2-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-no-se-presento-2-thumb.webp",
+      "landscape": false
     },
     {
       "id": 13,
@@ -140,7 +144,8 @@
       "year": "2022",
       "price": "MXN 25,000.00",
       "image": "art/espacios-y-momentos-fugaces-6.webp",
-      "thumbnail": "art/espacios-y-momentos-fugaces-6-thumb.webp"
+      "thumbnail": "art/espacios-y-momentos-fugaces-6-thumb.webp",
+      "landscape": true
     },
     {
       "id": 14,
@@ -150,7 +155,8 @@
       "year": "2021",
       "price": "MXN 7,650.00",
       "image": "art/las-personas-que-no-recordamos.webp",
-      "thumbnail": "art/las-personas-que-no-recordamos-thumb.webp"
+      "thumbnail": "art/las-personas-que-no-recordamos-thumb.webp",
+      "landscape": true
     },
     {
       "id": 15,
@@ -160,7 +166,8 @@
       "year": "2022",
       "price": "MXN 7,000.00",
       "image": "art/los-lugares-que-no-recordamos.webp",
-      "thumbnail": "art/los-lugares-que-no-recordamos-thumb.webp"
+      "thumbnail": "art/los-lugares-que-no-recordamos-thumb.webp",
+      "landscape": false
     },
     {
       "id": 16,
@@ -170,7 +177,8 @@
       "year": "2022",
       "price": "MXN 7,000.00",
       "image": "art/aquel-sueno-que-no-se-presento-5-2.webp",
-      "thumbnail": "art/aquel-sueno-que-no-se-presento-5-2-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-no-se-presento-5-2-thumb.webp",
+      "landscape": true
     },
     {
       "id": 17,
@@ -180,7 +188,8 @@
       "year": "2022",
       "price": "MXN 25,000.00",
       "image": "art/espacios-y-momentos-fugaces-7.webp",
-      "thumbnail": "art/espacios-y-momentos-fugaces-7-thumb.webp"
+      "thumbnail": "art/espacios-y-momentos-fugaces-7-thumb.webp",
+      "landscape": false
     },
     {
       "id": 18,
@@ -190,7 +199,8 @@
       "year": "2024",
       "price": "MXN 17,500.00",
       "image": "art/aquel-sueno-que-aun-recordamos-2.webp",
-      "thumbnail": "art/aquel-sueno-que-aun-recordamos-2-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-aun-recordamos-2-thumb.webp",
+      "landscape": false
     },
     {
       "id": 19,
@@ -200,7 +210,8 @@
       "year": "2022",
       "price": "MXN 6,500.00",
       "image": "art/las-montanas-caminan-4.webp",
-      "thumbnail": "art/las-montanas-caminan-4-thumb.webp"
+      "thumbnail": "art/las-montanas-caminan-4-thumb.webp",
+      "landscape": true
     },
     {
       "id": 20,
@@ -210,7 +221,8 @@
       "year": "2022",
       "price": "MXN 6,500.00",
       "image": "art/nada-realmente-termina-2.webp",
-      "thumbnail": "art/nada-realmente-termina-2-thumb.webp"
+      "thumbnail": "art/nada-realmente-termina-2-thumb.webp",
+      "landscape": false
     },
     {
       "id": 21,
@@ -220,7 +232,8 @@
       "year": "2022",
       "price": "MXN 6,500.00",
       "image": "art/nada-realmente-termina-3.webp",
-      "thumbnail": "art/nada-realmente-termina-3-thumb.webp"
+      "thumbnail": "art/nada-realmente-termina-3-thumb.webp",
+      "landscape": false
     },
     {
       "id": 22,
@@ -230,7 +243,8 @@
       "year": "2023",
       "price": "MXN 8,500.00",
       "image": "art/los-lugares-que-no-recordamos-4.webp",
-      "thumbnail": "art/los-lugares-que-no-recordamos-4-thumb.webp"
+      "thumbnail": "art/los-lugares-que-no-recordamos-4-thumb.webp",
+      "landscape": true
     },
     {
       "id": 23,
@@ -240,7 +254,8 @@
       "year": "2022",
       "price": "MXN 7,000.00",
       "image": "art/aquel-sueno-que-no-se-presento-5-1.webp",
-      "thumbnail": "art/aquel-sueno-que-no-se-presento-5-1-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-no-se-presento-5-1-thumb.webp",
+      "landscape": true
     },
     {
       "id": 24,
@@ -250,7 +265,8 @@
       "year": "2022",
       "price": "MXN 7,000.00",
       "image": "art/aquel-sueno-que-no-se-presento-3.webp",
-      "thumbnail": "art/aquel-sueno-que-no-se-presento-3-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-no-se-presento-3-thumb.webp",
+      "landscape": false
     },
     {
       "id": 25,
@@ -260,7 +276,8 @@
       "year": "2023",
       "price": "MXN 7,000.00",
       "image": "art/umbral-hacia-un-recuerdo-6.webp",
-      "thumbnail": "art/umbral-hacia-un-recuerdo-6-thumb.webp"
+      "thumbnail": "art/umbral-hacia-un-recuerdo-6-thumb.webp",
+      "landscape": true
     },
     {
       "id": 26,
@@ -270,7 +287,8 @@
       "year": "2024",
       "price": "MXN 17,500.00",
       "image": "art/aquel-sueno-que-aun-recordamos-3.webp",
-      "thumbnail": "art/aquel-sueno-que-aun-recordamos-3-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-aun-recordamos-3-thumb.webp",
+      "landscape": true
     },
     {
       "id": 27,
@@ -280,7 +298,8 @@
       "year": "2024",
       "price": "MXN 25,500.00",
       "image": "art/ensonacion-de-verano-1b.webp",
-      "thumbnail": "art/ensonacion-de-verano-1b-thumb.webp"
+      "thumbnail": "art/ensonacion-de-verano-1b-thumb.webp",
+      "landscape": false
     },
     {
       "id": 28,
@@ -290,7 +309,8 @@
       "year": "2024",
       "price": "MXN 17,500.00",
       "image": "art/aquel-sueno-que-aun-recordamos-4.webp",
-      "thumbnail": "art/aquel-sueno-que-aun-recordamos-4-thumb.webp"
+      "thumbnail": "art/aquel-sueno-que-aun-recordamos-4-thumb.webp",
+      "landscape": false
     },
     {
       "id": 29,
@@ -300,7 +320,8 @@
       "year": "2022",
       "price": "Colección privada",
       "image": "art/los-momentos-que-no-recordamos.webp",
-      "thumbnail": "art/los-momentos-que-no-recordamos-thumb.webp"
+      "thumbnail": "art/los-momentos-que-no-recordamos-thumb.webp",
+      "landscape": false
     },
     {
       "id": 30,
@@ -310,7 +331,8 @@
       "year": "2023",
       "price": "MXN 7,000.00",
       "image": "art/umbral-hacia-un-recuerdo-5.webp",
-      "thumbnail": "art/umbral-hacia-un-recuerdo-5-thumb.webp"
+      "thumbnail": "art/umbral-hacia-un-recuerdo-5-thumb.webp",
+      "landscape": true
     }
   ],
   "bio":{
