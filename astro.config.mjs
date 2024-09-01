@@ -8,7 +8,7 @@ import partytown from "@astrojs/partytown";
 export default defineConfig({
   integrations: [tailwind(), icon({
     include: {
-      bi: ['facebook', 'twitter-x', 'youtube', 'instagram', 'box-arrow-in-right','envelope-paper-heart','file-earmark-arrow-down', 'box-arrow-in-right', 'link-45deg']
+      bi: ['facebook', 'twitter-x', 'youtube', 'instagram', 'box-arrow-in-right','envelope-paper-heart','file-earmark-arrow-down', 'box-arrow-in-right', 'link-45deg', 'arrow-bar-right', 'arrow-bar-left']
     }
   }), partytown({
     config: {

@@ -16,6 +16,7 @@
     "@fontsource-variable/outfit": "^5.0.13",
     "@fontsource-variable/roboto-slab": "^5.0.21",
     "@iconify-json/bi": "^1.1.24",
+    "@julian_cataldo/astro-lightbox": "^0.10.11",
     "astro": "^4.14.6",
     "astro-icon": "^1.1.1",
     "flowbite": "^2.3.0",

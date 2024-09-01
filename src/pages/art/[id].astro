@@ -1,5 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { Icon } from "astro-icon/components";
+import Lightbox from '@julian_cataldo/astro-lightbox/Lightbox.astro';
 import { art } from "@art";
 
 interface ArtItem {
@@ -27,15 +29,18 @@ if (!item) {
   throw new Error(`Item with id ${id} not found`);
 }
 ---
+<Lightbox />
 <Layout title={item.name}>
   <div class="max-w-screen-xl mx-auto">
     <h2 class="text-3xl mt-5 uppercase">{item.name}</h2>
-    <article>
+    <article class="my-5">
       <a class="hover:text-red" href="/">Inicio</a> / <a class="hover:text-red" href="../art">Obra</a> / <span class="underline">{item.name}</span>
     </article>
-    <div class={` ${item.landscape === true ? 'grid grid-cols-4 gap-3 mt-4  mx-auto' : 'grid grid-cols-6 gap-5 items-center max-w-screen-sm mx-auto'}`}>
-      <img class="col-span-3" loading="lazy" src={"../" + item.image} alt={item.name} />
-      <div>
+    <div class={` ${item.landscape === true ? 'flex flex-col max-w-screen-md gap-5  mx-auto' : 'grid grid-cols-5 gap-5 items-center max-w-screen-sm mx-auto'}`}>
+      <div class="col-span-3" data-lightbox="true">
+        <img class="" loading="lazy" src={"../" + item.image} alt={item.name} />
+      </div>
+      <div class="col-span-2">
         <p><strong>Técnica:</strong> {item.technique}</p>
         <p><strong>Tamaño:</strong> {item.size}</p>
         <p><strong>Año:</strong> {item.year}</p>
@@ -45,17 +50,24 @@ if (!item) {
     <nav class="mx-auto mt-5 w-full items-center flex justify-center">
       <div class="flex flex-row items-center">
         {parseInt(id) > 1 && (
-          <a href={"/art/" + (parseInt(id) - 1).toString()} class="mr-2 font-light text-sm">Anterior</a>
+          <a href={"/art/" + (parseInt(id) - 1).toString()} class="mr-2 font-light text-sm"><Icon name="bi:arrow-bar-left" /></a>
         )}
-        {art.map((item: ArtItem, index: number) => (
-          <a href={"/art/" + item.id.toString()}>
-            <article class={`size-7 bg-white border border-slate-400 text-xs flex items-center justify-center font-extralight ${item.id.toString() === id ? 'bg-red/40' : ''}`}>
-              {item.id}
-            </article>
-          </a>
-        ))}
+        {(() => {
+          const currentIndex = art.findIndex((item: ArtItem) => item.id.toString() === id);
+          const start = Math.max(0, currentIndex - 3);
+          const end = Math.min(art.length, currentIndex + 4);
+          const sublist = art.slice(start, end);
+
+          return sublist.map((item: ArtItem, index: number) => (
+            <a href={"/art/" + item.id.toString()}>
+              <article class={`size-6 bg-white border border-slate-400 text-xs flex items-center justify-center font-extralight ${item.id.toString() === id ? 'bg-slate-700 text-light' : ''}`}>
+                {item.id}
+              </article>
+            </a>
+          ));
+        })()}
         {parseInt(id) < art.length && (
-          <a href={"/art/" + (parseInt(id) + 1).toString()} class="ml-2 font-light text-sm">Siguiente</a>
+          <a href={"/art/" + (parseInt(id) + 1).toString()} class="ml-2 font-light text-sm"><Icon name="bi:arrow-bar-right" /></a>
         )}
 
       </div>
