@@ -60,7 +60,7 @@ if (!item) {
 
           return sublist.map((item: ArtItem, index: number) => (
             <a href={"/art/" + item.id.toString()}>
-              <article class={`size-6 bg-white border border-slate-400 text-xs flex items-center justify-center font-extralight ${item.id.toString() === id ? 'bg-slate-700 text-light' : ''}`}>
+              <article class={`size-6 bg-white border border-slate-400 text-xs flex items-center justify-center font-extralight ${item.id.toString() === id ? 'bg-slate-800 text-light' : ''}`}>
                 {item.id}
               </article>
             </a>
