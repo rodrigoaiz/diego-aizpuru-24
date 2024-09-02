@@ -1,0 +1,122 @@
+---
+import Logo from "@/components/Logo.astro";
+import menu from "@/config/menu.json";
+export interface ChildNavigationLink {
+  name: string;
+  url: string;
+}
+
+export interface NavigationLink {
+  name: string;
+  url: string;
+  hasChildren?: boolean;
+  children?: ChildNavigationLink[];
+}
+
+const { main }: { main: NavigationLink[] } = menu;
+const { pathname } = Astro.url;
+---
+
+<header
+>
+
+    <nav class="navbar md:px-5 mx-auto flex flex-wrap items-center justify-between menu bg-slate-100/[.8] w-full py-4 z-50  top-0 hover:transition-all sticky">
+      <!-- logo -->
+      <div class="order-0">
+        <a href="/"><Logo class="hidden md:block h-10 w-15" /></a>
+      </div>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="flex flex-col p-4 md:p-0 mt-4 border md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+          {
+            main.map((menu) => (
+              <>
+                {menu.hasChildren ? (
+                  <li>
+                    <a
+                      id="has-children"
+                      data-dropdown-toggle="child"
+                      class={`inline-flex items-center hover:text-slate-400 transition-all ${
+                        menu.children?.map(({ url }) => url).includes(pathname) ||
+                        menu.children
+                          ?.map(({ url }) => `${url}/`)
+                          .includes(pathname)
+                          ? "active"
+                          : ""
+                      }`}
+                    >
+                      {menu.name}
+                      <svg class="size-5 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </a>
+                    <div
+                      id="child"
+                      class="z-50 hidden text-darkblue shadow !top-4"
+                    >
+                      <ul
+                        class="cursor-pointer bg-light z-50"
+                        aria-labelledby="haschildren"
+                      >
+                        {menu.children?.map((child) => (
+                          <li class="hover:bg-lightblue hover:darkblue hover:transition-all px-2 py-1 font-light">
+                            <a
+                              href={child.url}
+                              aria-label={child.name}
+                              class={`block  ${
+                                (pathname === `${child.url}/` ||
+                                  pathname === child.url) &&
+                                ""
+                              }`}
+                            >
+                              {child.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                ) : (
+                  <li>
+                    <a
+                      href={menu.url}
+                      class={`hover:text-slate-400 transition-all ${
+                        (pathname === `${menu.url}/` || pathname === menu.url) &&
+                        "active"
+                      }`}
+                    >
+                      {menu.name}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+      </div>
+    </nav>
+
+</header>
+<style>
+  a.active {
+
+    text-decoration: overline ;
+  }
+</style>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.querySelector('[data-collapse-toggle]');
+    const navbar = document.getElementById('navbar-default');
+
+    toggleButton.addEventListener('click', function () {
+      const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+      toggleButton.setAttribute('aria-expanded', !isExpanded);
+      navbar.classList.toggle('hidden');
+    });
+  });
+</script>
