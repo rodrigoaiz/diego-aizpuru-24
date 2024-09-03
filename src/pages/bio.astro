@@ -1,10 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import { bio,sections } from "@art"
-interface Bio {
-  bio: string;
-  image: string;
-}
+import { me,sections } from "@art"
 const currentPath = Astro.url.pathname;
 const section = sections.find((section) => section.url === currentPath);
 ---
@@ -12,14 +8,18 @@ const section = sections.find((section) => section.url === currentPath);
   <Layout title={section.name}>
     <div class="max-w-screen-lg mx-auto">
       <h2 class="text-3xl my-5 uppercase">{section.name}</h2>
-
-      <h3>{bio.name}</h3>
-      <h3>{bio.profession}</h3>
       <div class="grid grid-cols-3 gap-4">
         <div>
-          <img src={bio.image} alt="Diego Aizpuru" class="w-full" />
+          <img src={me.image} alt="Diego Aizpuru" class="w-full" />
         </div>
-        <p class="col-span-2">{bio.description}</p>
+        <div class="col-span-2">
+          <p>{me.description1}</p>
+          <p>{me.description2}</p>
+          <p>{me.description3}</p>
+          <p>{me.description4}</p>
+          <p>{me.description5}</p>
+          <p>{me.description6}</p>
+        </div>
       </div>
     </div>
   </Layout>
