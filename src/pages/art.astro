@@ -7,19 +7,26 @@ interface Art {
   id: number;
 }
 import Layout from '@/layouts/Layout.astro';
-import { art } from "@art";
+import { art, sections } from "@art";
+function getSectionNameByCurrentUrl(): string | undefined {
+  const { pathname } = Astro.url
+  const currentUrl = pathname;
+  const section = sections.find(section => section.url === currentUrl);
+  return section ? section.name : undefined;
+}
+const sectionTitle = getSectionNameByCurrentUrl();
 ---
-<Layout title="Artwork">
-  <div class="max-w-screen-xl mx-auto">
-    <h2 class="text-3xl my-5 uppercase">Obra</h2>
+<Layout title={sectionTitle}>
+  <div class="max-w-screen-lg mx-auto px-1">
+    <h2 class="text-3xl my-5 uppercase">{sectionTitle}</h2>
     <div class="grid grid-cols-2 xl:grid-cols-4 gap-5">
       {art.map((item) => (
         <a href={"/art/" + item.id.toString()}>
-          <article class="col-span-1">
+          <article class="col-span-1 aspect-square animate-fade">
             <header>
-              <img class="xl:saturate-0 xl:hover:saturate-100 ease-in-out duration-200" loading="lazy" src={item.thumbnail} alt={item.name} />
+              <img class=" xl:saturate-0 xl:hover:saturate-100 ease-in-out duration-200" src={item.thumbnail} alt={item.name} />
             </header>
-            <footer>
+            <footer class="self-end">
               <h3 class="font-light text-center text-base mt-1">{item.name}</h3>
             </footer>
           </article>

@@ -1,0 +1,87 @@
+<style is:global>
+  :root {
+color-scheme: dark;
+--red: 230 57 70;
+--light: 241 250 238;
+--darkest-blue: 8 20 36;
+--css-red-own: rgb(230 57 70);
+--css-ownwhite: rgb(241 250 238);
+--css-darkest-blue: rgb(8 20 36);
+--headings-xl: clamp(1.7rem, 2.1vw, 2.2rem);
+--headings-lg: clamp(1.4rem, 1.7vw, 1.9rem);
+--font-titulos: 'Roboto Slab Variable', serif;
+--font-cuerpo: 'Outfit Variable', sans-serif;
+--transition-smooth: ease-in-out 0.5s all;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: ease-in-out 0.5s ;
+}
+body {
+  font-family: var(--font-cuerpo);
+  background-color: var(--css-ownwhite);
+  color: var(--css-darkest-blue);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.menu{
+  font-family: var(--font-titulos);
+  color: var(--css-darkest-blue);
+  transition: var(--transition-smooth);
+  a {
+    color: var(--css-darkest-blue);
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 1rem;
+    &:hover {
+      color: var(--css-red-own);
+    }
+  }
+}
+.app-lightbox {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  cursor: zoom-out;
+  background-color: var(--bg-color, hsl(0, 0%, 0%, 0.85));
+  opacity: 0;
+  transition: opacity 0.35s;
+
+  &.is-active {
+    pointer-events: initial;
+    opacity: 1;
+  }
+}
+
+:global([data-lightbox]) {
+  cursor: zoom-in;
+}
+
+.portal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.35s, transform 0.35s;
+  transform: scale(0.2);
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .is-active & {
+    transform: scale(1);
+  }
+}
+
+</style>

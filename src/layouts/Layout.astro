@@ -2,6 +2,7 @@
 import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import GlobalStyles from "@/components/GlobalStyles.astro";
 import "@fontsource-variable/outfit";
 import '@fontsource-variable/roboto-slab';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
@@ -16,6 +17,7 @@ const {
 <!doctype html>
 <html lang="es">
   <head>
+    <GlobalStyles />
     <BaseHead
       title={title}
       description={description}
@@ -26,7 +28,7 @@ const {
   <body>
     <div class="min-h-screen flex flex-col justify-between">
       <Header />
-      <main class="px-1 animate-fade animate-duration-200">
+      <main class="animate-fade animate-duration-400 animate-delay-200">
         <slot />
       </main>
       <Footer  />

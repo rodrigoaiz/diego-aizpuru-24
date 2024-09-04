@@ -1,16 +1,23 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { expos } from '@art'
+import { expos, sections } from '@art'
 interface Expos {
   name: string
   type: string
   date: string
   place: string
 }
+function getSectionNameByCurrentUrl(): string | undefined {
+  const { pathname } = Astro.url
+  const currentUrl = pathname;
+  const section = sections.find(section => section.url === currentUrl);
+  return section ? section.name : undefined;
+}
+const sectionTitle = getSectionNameByCurrentUrl();
 ---
-<Layout title="Exhibitions">
-  <div class="max-w-screen-xl mx-auto">
-    <h2 class="text-3xl my-5 uppercase">Exposiciones</h2>
+<Layout title={sectionTitle}>
+  <div class="max-w-screen-xl mx-auto px-1">
+    <h2 class="text-3xl my-5 uppercase">{sectionTitle}</h2>
     <div class="w-1/2 mx-auto">
       {expos.map((item: Expos) => (
         <article class="grid grid-cols-3 mb-5">

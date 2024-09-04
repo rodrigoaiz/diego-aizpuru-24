@@ -1,18 +1,24 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import { bio , me } from "@art"
+import { bio , me, sections } from "@art"
 interface Bio {
   bio: string;
   image: string;
 }
-import { sections } from "@art";
+function getSectionNameByCurrentUrl(): string | undefined {
+  const { pathname } = Astro.url
+  const currentUrl = pathname;
+  const section = sections.find(section => section.url === currentUrl);
+  return section ? section.name : undefined;
+}
+const sectionTitle = getSectionNameByCurrentUrl();
 ---
-<Layout title="Biografía">
-  <div class="max-w-screen-lg mx-auto">
-    <h2 class="text-3xl my-5 uppercase">Biografía</h2>
+<Layout title={sectionTitle}>
+  <div class="max-w-screen-lg mx-auto px-1">
+    <h2 class="text-3xl my-5 uppercase">{sectionTitle}</h2>
     <div class="grid grid-cols-3 gap-4">
       <div>
-        <img src={bio.image} alt="Diego Aizpuru" class="w-full" />
+        <img src={bio.image} alt={bio.name} class="w-full" />
         <h3>{bio.name}</h3>
         <h3>{bio.profession}</h3>
       </div>
