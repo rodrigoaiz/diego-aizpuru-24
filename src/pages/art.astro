@@ -1,4 +1,6 @@
 ---
+import Layout from '@/layouts/Layout.astro';
+import { art, sections } from "@art";
 interface Art {
   name: string;
   technique: string;
@@ -6,8 +8,6 @@ interface Art {
   thumbnail: string;
   id: number;
 }
-import Layout from '@/layouts/Layout.astro';
-import { art, sections } from "@art";
 const currentPath = Astro.url.pathname;
 const section = sections.find((section) => section.url === currentPath);
 ---
