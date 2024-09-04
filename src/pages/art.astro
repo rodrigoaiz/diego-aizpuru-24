@@ -7,15 +7,11 @@ interface Art {
   id: number;
 }
 import Layout from '@/layouts/Layout.astro';
-import { art, sections } from "@art";
-const currentPath = Astro.url.pathname;
-const section = sections.find((section) => section.url === currentPath);
+import { art } from "@art";
 ---
 <Layout title="Artwork">
   <div class="max-w-screen-xl mx-auto">
-    {section && (
-      <h2 class="text-3xl my-5 uppercase">{section.name}</h2>
-    )}
+    <h2 class="text-3xl my-5 uppercase">Obra</h2>
     <div class="grid grid-cols-2 xl:grid-cols-4 gap-5">
       {art.map((item) => (
         <a href={"/art/" + item.id.toString()}>
