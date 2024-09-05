@@ -11,14 +11,9 @@
       "link": "https://www.threads.net/@diego.aizpuru"
     },
     {
-      "name": "facebook",
-      "icon": "bi:facebook",
-      "link": "https://www.facebook.com/diegoaizarte"
-    },
-    {
-      "name": "youtube",
-      "icon": "bi:youtube",
-      "link": "https://www.youtube.com/channel/UCbtxDUrB2frAGbyfd76-GQA"
+      "name": "linkedin",
+      "icon": "bi:linkedin",
+      "link": "https://www.linkedin.com/in/diego-aizpuru-1027bb250"
     }
   ]
 }

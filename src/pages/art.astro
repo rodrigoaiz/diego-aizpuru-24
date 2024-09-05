@@ -19,12 +19,12 @@ const sectionTitle = getSectionNameByCurrentUrl();
 <Layout title={sectionTitle}>
   <div class="max-w-screen-lg mx-auto px-1">
     <h2 class="text-3xl my-5 uppercase">{sectionTitle}</h2>
-    <div class="grid grid-cols-2 xl:grid-cols-4 gap-5">
+    <div class="grid grid-cols-2 xl:grid-cols-3 gap-5">
       {art.map((item) => (
         <a href={"/art/" + item.id.toString()}>
-          <article class="col-span-1 aspect-square animate-fade">
+          <article class="col-span-1 aspect-auto animate-fade">
             <header>
-              <img class=" xl:saturate-0 xl:hover:saturate-100 ease-in-out duration-200" src={item.thumbnail} alt={item.name} />
+              <img class="ease-in-out duration-200" src={item.thumbnail} alt={item.name} />
             </header>
             <footer class="self-end">
               <h3 class="font-light text-center text-base mt-1">{item.name}</h3>
