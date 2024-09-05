@@ -1,6 +1,16 @@
 {
   "main": [
     {
+      "name": "instagram",
+      "icon": "bi:instagram",
+      "link": "https://www.instagram.com/diego.aizpuru"
+    },
+    {
+      "name": "threads",
+      "icon": "bi:threads",
+      "link": "https://www.threads.net/@diego.aizpuru"
+    },
+    {
       "name": "facebook",
       "icon": "bi:facebook",
       "link": "https://www.facebook.com/diegoaizarte"
@@ -8,12 +18,7 @@
     {
       "name": "youtube",
       "icon": "bi:youtube",
-      "link": "https://www.youtube.com/user/@diegoaizpuru7631"
-    },
-    {
-      "name": "instagram",
-      "icon": "bi:instagram",
-      "link": "https://www.instagram.com/diego.aizpuru"
+      "link": "https://www.youtube.com/channel/UCbtxDUrB2frAGbyfd76-GQA"
     }
   ]
 }

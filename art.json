@@ -374,8 +374,10 @@
     "image": "/me.webp"
   },
   "contact":{
-    "email": "diegoaizarte@gmail.com",
-    "phone": "+55342294488"
+    "email1": "contacto@diegoaizpuru.com",
+    "email2": "diegoaizarte@gmail.com",
+    "phone": "+55342294488",
+    "image": "/contact.webp"
   },
   "expos":[
     {

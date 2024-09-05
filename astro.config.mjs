@@ -14,7 +14,7 @@ export default defineConfig({
     }),
     icon({
     include: {
-      bi: ['facebook', 'twitter-x', 'youtube', 'instagram', 'box-arrow-in-right','envelope-paper-heart','file-earmark-arrow-down', 'box-arrow-in-right', 'link-45deg', 'arrow-bar-right', 'arrow-bar-left']
+      bi: ['facebook', 'threads', 'twitter-x', 'youtube', 'instagram', 'linkedin', 'box-arrow-in-right','envelope-paper-heart','file-earmark-arrow-down', 'box-arrow-in-right', 'link-45deg', 'arrow-bar-right', 'arrow-bar-left']
     }
   }), partytown({
     config: {

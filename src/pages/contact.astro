@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { contact, sections } from "@art"
+import social from "@/config/social.json";
+import { Icon } from "astro-icon/components";
+interface Bio {
+  bio: string;
+  image: string;
+}
+function getSectionNameByCurrentUrl(): string | undefined {
+  const { pathname } = Astro.url
+  const currentUrl = pathname;
+  const section = sections.find(section => section.url === currentUrl);
+  return section ? section.name : undefined;
+}
+const sectionTitle = getSectionNameByCurrentUrl();
+---
+<Layout title={sectionTitle}>
+  <div class="max-w-screen-lg mx-auto px-1">
+    <h2 class="text-3xl my-5 uppercase">{sectionTitle}</h2>
+    <div class="grid gap-5 grid-cols-4">
+      <div>
+        <img class="w-full rounded-full" src={contact.image} alt={contact.email1}>
+      </div>
+      <div class="col-span-3 flex flex-col justify-center items-center">
+        <p><a href=`mailto:${contact.email1}` class="text-lg hover:text-red transition-all">{contact.email1}</a></p>
+        <p><a href=`mailto:${contact.email2}` class="text-lg hover:text-red transition-all">{contact.email2}</a></p>
+        <div class="w-full flex flex-row items-center justify-center mt-5 gap-5">
+          {
+            social.main.map((socialItem) => (
+              <article class="inline-block">
+                <a
+                  class="hover:text-red transition-all"
+                  href={socialItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon class="size-7" name={socialItem.icon} />
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
