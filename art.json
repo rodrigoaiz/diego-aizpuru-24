@@ -18,10 +18,6 @@
       "url": "/exhibitions"
     },
     {
-      "name": "Noticias",
-      "url": "/news"
-    },
-    {
       "name": "Contácto",
       "url": "/contact"
     }
