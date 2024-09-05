@@ -6,7 +6,13 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon({
+  integrations: [tailwind(),
+    partytown({
+    config: {
+      forward: ["dataLayer.push"]
+    }
+    }),
+    icon({
     include: {
       bi: ['facebook', 'twitter-x', 'youtube', 'instagram', 'box-arrow-in-right','envelope-paper-heart','file-earmark-arrow-down', 'box-arrow-in-right', 'link-45deg', 'arrow-bar-right', 'arrow-bar-left']
     }
