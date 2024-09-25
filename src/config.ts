@@ -3,3 +3,5 @@
 
 export const SITE_TITLE = 'Diego Aizpuru Artwork';
 export const SITE_DESCRIPTION = 'Diego Aizpuru Artwork';
+export const SITE_URL = 'https://diegoaizpuru.com';
+export const SITE_IMAGE = `${SITE_URL}/contact.webp`;

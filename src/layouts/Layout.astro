@@ -5,9 +5,9 @@ import Footer from "@/components/Footer.astro";
 import GlobalStyles from "@/components/GlobalStyles.astro";
 import "@fontsource-variable/outfit";
 import '@fontsource-variable/roboto-slab';
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_IMAGE } from "../config";
 const {
-  image,
+  image = SITE_IMAGE,
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   ogType,
