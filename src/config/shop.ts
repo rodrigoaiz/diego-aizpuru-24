@@ -18,6 +18,7 @@ export const SHOP_ITEMS: Record<number, ShopItemConfig> = {
     allowInternational: true,
     paymentProvider: 'mercado_pago',
     status: 'available',
+    checkoutUrl: 'https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=TEST-OBRA-1',
   },
   2: {
     enabled: true,
