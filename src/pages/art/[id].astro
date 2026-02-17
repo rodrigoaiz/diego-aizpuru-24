@@ -1,8 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { Icon } from "astro-icon/components";
-import { art } from "@art";
-import LightBox from "@/components/LightBox.astro";
+import { Icon } from 'astro-icon/components';
+import { art, contact } from '@art';
+import LightBox from '@/components/LightBox.astro';
+import {
+  getShopItemConfig,
+  parsePriceMXN,
+  SHIPPING_RATES_MXN,
+  INSURANCE_RATE,
+  PACKAGING_FEE_MXN,
+} from '@/config/shop';
 
 interface ArtItem {
   id: number;
@@ -12,6 +19,7 @@ interface ArtItem {
   year: string;
   price: string;
   image: string;
+  landscape: boolean;
 }
 
 export async function getStaticPaths() {
@@ -19,15 +27,34 @@ export async function getStaticPaths() {
     params: { id: item.id.toString() },
   }));
 
-  return paths // Asegúrate de devolver también la propiedad 'fallback'
+  return paths;
 }
 
 const { id } = Astro.params;
-const item = art.find((item: ArtItem) => item.id.toString() === id);
+const item = art.find((currentItem: ArtItem) => currentItem.id.toString() === id);
 
 if (!item) {
   throw new Error(`Item with id ${id} not found`);
 }
+
+const shopItem = getShopItemConfig(item.id);
+const numericPrice = parsePriceMXN(item.price);
+const isSold =
+  shopItem?.status === 'sold' ||
+  item.price.toLowerCase().includes('colección privada') ||
+  item.price.toLowerCase().includes('coleccion privada');
+const canSellThisItem = Boolean(shopItem?.enabled && numericPrice !== null && !isSold);
+const canBuyOnline = Boolean(canSellThisItem && shopItem?.checkoutUrl);
+const canRequestCheckoutLink = Boolean(canSellThisItem && !shopItem?.checkoutUrl);
+const shippingClass = shopItem?.shippingClass ?? 'medium';
+const providerName = shopItem?.paymentProvider === 'stripe' ? 'Stripe' : 'Mercado Pago';
+
+const safePhone = String(contact?.phone ?? '').replace(/[^\d+]/g, '');
+const requestMessage = `Hola, quiero comprar la obra "${item.name}" (ID ${item.id}) publicada en diegoaizpuru.com. ¿Podrías compartirme el checkout seguro y opciones de envío?`;
+const whatsappHref = safePhone
+  ? `https://wa.me/${safePhone.replace('+', '')}?text=${encodeURIComponent(requestMessage)}`
+  : '#';
+const contactEmail = String(contact?.email1 ?? '');
 ---
 <Layout title={item.name}>
   <LightBox />
@@ -36,46 +63,292 @@ if (!item) {
     <article class="my-5">
       <a class="hover:text-red" href="/">Inicio</a> / <a class="hover:text-red" href="../art">Obra</a> / <span class="underline">{item.name}</span>
     </article>
-    <div class={` ${item.landscape === true ? 'flex flex-col max-w-screen-md gap-5  mx-auto' : 'grid grid-cols-5 gap-5 items-center max-w-screen-sm mx-auto'}`}>
+
+    <div class={` ${item.landscape === true ? 'flex flex-col max-w-screen-md gap-5 mx-auto' : 'grid grid-cols-5 gap-5 items-center max-w-screen-sm mx-auto'}`}>
       <div class="col-span-3" data-lightbox="true">
-        <img class="" loading="lazy" src={"../" + item.image} alt={item.name} />
+        <img loading="lazy" src={'../' + item.image} alt={item.name} />
       </div>
-      <div class="col-span-2">
+      <div class="col-span-2 space-y-1">
         <p><strong>Técnica:</strong> {item.technique}</p>
         <p><strong>Tamaño:</strong> {item.size}</p>
         <p><strong>Año:</strong> {item.year}</p>
         <p><strong>Precio:</strong> {item.price}</p>
+        <p><strong>Estado:</strong> {isSold ? 'Vendido' : 'Disponible'}</p>
       </div>
     </div>
+
+    {canSellThisItem && (
+      <section
+        id="shop-module"
+        class="max-w-screen-md mx-auto mt-8 border border-slate-300 p-4 md:p-6"
+        data-price={numericPrice}
+        data-shipping-class={shippingClass}
+        data-rates={JSON.stringify(SHIPPING_RATES_MXN)}
+        data-insurance-rate={INSURANCE_RATE}
+        data-packaging-fee={PACKAGING_FEE_MXN}
+      >
+        <h3 class="text-xl uppercase">Compra directa</h3>
+        <p class="text-sm mt-2">
+          Pago seguro mediante enlace de checkout y envío con guía rastreable. El cálculo de envío es aproximado y puede variar por destino final.
+        </p>
+
+        <div class="mt-4 flex flex-col md:flex-row gap-3">
+          {canBuyOnline && shopItem?.checkoutUrl && (
+            <a class="shop-btn" href={shopItem.checkoutUrl} target="_blank" rel="noopener noreferrer">
+              Pagar con {providerName}
+            </a>
+          )}
+          {canRequestCheckoutLink && (
+            <a class="shop-btn" href={whatsappHref} target="_blank" rel="noopener noreferrer">
+              Solicitar link de {providerName}
+            </a>
+          )}
+          <a class="shop-btn-secondary" href="#info-form-module">Mas informacion</a>
+        </div>
+
+        <div class="mt-6 p-4 border border-slate-200 bg-slate-50">
+          <h4 class="uppercase text-sm tracking-wide">Estimador de envío</h4>
+
+          <div class="grid md:grid-cols-2 gap-4 mt-3">
+            <label class="text-sm">
+              Destino
+              <select id="shipping-destination" class="w-full mt-1 border border-slate-300 p-2 bg-white">
+                <option value="mexico">México</option>
+                {shopItem?.allowInternational && <option value="international">Internacional</option>}
+              </select>
+            </label>
+
+            <label id="zone-wrapper" class="text-sm hidden">
+              Región internacional
+              <select id="shipping-zone" class="w-full mt-1 border border-slate-300 p-2 bg-white">
+                <option value="northAmerica">Norteamérica (EE. UU. y Canadá)</option>
+                <option value="latam">Latinoamérica</option>
+                <option value="europe">Europa</option>
+                <option value="asiaOceania">Asia y Oceanía</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="flex items-center gap-2 mt-4 text-sm">
+            <input id="insurance-toggle" type="checkbox" checked />
+            Incluir seguro de envío
+          </label>
+
+          <div class="mt-4 border-t border-slate-200 pt-4 text-sm space-y-1">
+            <p>Obra: <span id="art-price">-</span></p>
+            <p>Envío estimado: <span id="shipping-price">-</span></p>
+            <p>Empaque especializado: <span id="packaging-price">-</span></p>
+            <p id="insurance-row">Seguro de envío: <span id="insurance-price">-</span></p>
+            <p class="text-base font-semibold pt-2">Total estimado: <span id="estimated-total">-</span></p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {isSold && (
+      <section class="max-w-screen-md mx-auto mt-8 border border-slate-300 p-4 md:p-6 bg-slate-50">
+        <h3 class="text-xl uppercase">Obra vendida</h3>
+        <p class="text-sm mt-2">
+          Esta pieza ya no esta disponible para compra directa. Si quieres una obra similar o conocer disponibilidad de otras piezas, escríbenos.
+        </p>
+        <div class="mt-4">
+          <a class="shop-btn-secondary" href="#info-form-module">Solicitar mas informacion</a>
+        </div>
+      </section>
+    )}
+
+    <section
+      id="info-form-module"
+      class="max-w-screen-md mx-auto mt-8 border border-slate-300 p-4 md:p-6"
+      data-art-id={item.id}
+      data-art-name={item.name}
+      data-art-price={item.price}
+      data-contact-email={contactEmail}
+    >
+      <h3 class="text-xl uppercase">Mas informacion de la obra</h3>
+      <p class="text-sm mt-2">Completa el formulario y se abre tu correo con el mensaje listo para enviar.</p>
+
+      <form id="art-info-form" class="mt-4 grid md:grid-cols-2 gap-3">
+        <label class="text-sm md:col-span-1">
+          Nombre
+          <input required name="name" type="text" class="w-full mt-1 border border-slate-300 p-2 bg-white" />
+        </label>
+        <label class="text-sm md:col-span-1">
+          Correo
+          <input required name="email" type="email" class="w-full mt-1 border border-slate-300 p-2 bg-white" />
+        </label>
+        <label class="text-sm md:col-span-2">
+          Mensaje
+          <textarea name="message" rows="4" class="w-full mt-1 border border-slate-300 p-2 bg-white" placeholder="Quiero conocer disponibilidad, tiempo de entrega y opciones de pago."></textarea>
+        </label>
+        <div class="md:col-span-2 flex items-center gap-3">
+          <button type="submit" class="shop-btn">Enviar consulta</button>
+          <p class="text-xs text-slate-600">Si no abre tu app de correo, escríbenos por WhatsApp.</p>
+        </div>
+      </form>
+    </section>
+
     <nav class="mx-auto mt-5 w-full items-center flex justify-center">
       <div class="flex flex-row items-center">
         {parseInt(id) > 1 && (
-          <a href={"/art/" + (parseInt(id) - 1).toString()} class="mr-2 font-light text-sm"><Icon name="bi:arrow-bar-left" /></a>
+          <a href={'/art/' + (parseInt(id) - 1).toString()} class="mr-2 font-light text-sm"><Icon name="bi:arrow-bar-left" /></a>
         )}
         {(() => {
-          const currentIndex = art.findIndex((item: ArtItem) => item.id.toString() === id);
+          const currentIndex = art.findIndex((currentItem: ArtItem) => currentItem.id.toString() === id);
           const start = Math.max(0, currentIndex - 3);
           const end = Math.min(art.length, currentIndex + 4);
           const sublist = art.slice(start, end);
 
-          return sublist.map((item: ArtItem, index: number) => (
-            <a href={"/art/" + item.id.toString()}>
-              <article class={`size-6 bg-white border border-slate-400 text-xs flex items-center justify-center font-extralight ${item.id.toString() === id ? 'bg-slate-800 text-light' : ''}`}>
-                {item.id}
+          return sublist.map((subItem: ArtItem) => (
+            <a href={'/art/' + subItem.id.toString()}>
+              <article class={`size-6 bg-white border border-slate-400 text-xs flex items-center justify-center font-extralight ${subItem.id.toString() === id ? 'bg-slate-800 text-light' : ''}`}>
+                {subItem.id}
               </article>
             </a>
           ));
         })()}
         {parseInt(id) < art.length && (
-          <a href={"/art/" + (parseInt(id) + 1).toString()} class="ml-2 font-light text-sm"><Icon name="bi:arrow-bar-right" /></a>
+          <a href={'/art/' + (parseInt(id) + 1).toString()} class="ml-2 font-light text-sm"><Icon name="bi:arrow-bar-right" /></a>
         )}
-
       </div>
     </nav>
   </div>
 </Layout>
+
+<script>
+  const money = new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: 'MXN',
+  });
+
+  const moduleNode = document.querySelector<HTMLElement>('#shop-module');
+
+  if (moduleNode) {
+    const destinationNode = document.querySelector<HTMLSelectElement>('#shipping-destination');
+    const zoneNode = document.querySelector<HTMLSelectElement>('#shipping-zone');
+    const zoneWrapper = document.querySelector<HTMLElement>('#zone-wrapper');
+    const insuranceToggleNode = document.querySelector<HTMLInputElement>('#insurance-toggle');
+
+    const artPriceNode = document.querySelector<HTMLElement>('#art-price');
+    const shippingPriceNode = document.querySelector<HTMLElement>('#shipping-price');
+    const packagingPriceNode = document.querySelector<HTMLElement>('#packaging-price');
+    const insurancePriceNode = document.querySelector<HTMLElement>('#insurance-price');
+    const insuranceRowNode = document.querySelector<HTMLElement>('#insurance-row');
+    const estimatedTotalNode = document.querySelector<HTMLElement>('#estimated-total');
+
+    const rates = JSON.parse(moduleNode.dataset.rates || '{}');
+    const shippingClass = moduleNode.dataset.shippingClass || 'medium';
+    const artPrice = Number(moduleNode.dataset.price || 0);
+    const insuranceRate = Number(moduleNode.dataset.insuranceRate || 0);
+    const packagingFee = Number(moduleNode.dataset.packagingFee || 0);
+
+    const calculate = () => {
+      const destination = destinationNode?.value || 'mexico';
+      const zone = zoneNode?.value || 'northAmerica';
+      const insuranceEnabled = insuranceToggleNode?.checked ?? true;
+
+      if (zoneWrapper) {
+        zoneWrapper.classList.toggle('hidden', destination !== 'international');
+      }
+
+      let shippingCost = 0;
+      if (destination === 'mexico') {
+        shippingCost = Number(rates?.mexico?.[shippingClass] || 0);
+      } else {
+        shippingCost = Number(rates?.international?.[zone]?.[shippingClass] || 0);
+      }
+
+      const insuranceCost = insuranceEnabled ? artPrice * insuranceRate : 0;
+      const total = artPrice + shippingCost + packagingFee + insuranceCost;
+
+      if (artPriceNode) artPriceNode.textContent = money.format(artPrice);
+      if (shippingPriceNode) shippingPriceNode.textContent = money.format(shippingCost);
+      if (packagingPriceNode) packagingPriceNode.textContent = money.format(packagingFee);
+      if (insurancePriceNode) insurancePriceNode.textContent = money.format(insuranceCost);
+      if (insuranceRowNode) insuranceRowNode.classList.toggle('opacity-60', !insuranceEnabled);
+      if (estimatedTotalNode) estimatedTotalNode.textContent = money.format(total);
+    };
+
+    destinationNode?.addEventListener('change', calculate);
+    zoneNode?.addEventListener('change', calculate);
+    insuranceToggleNode?.addEventListener('change', calculate);
+
+    calculate();
+  }
+
+  const infoModuleNode = document.querySelector<HTMLElement>('#info-form-module');
+  const infoFormNode = document.querySelector<HTMLFormElement>('#art-info-form');
+
+  if (infoModuleNode && infoFormNode) {
+    const contactEmailValue = infoModuleNode.dataset.contactEmail || '';
+    const artIdValue = infoModuleNode.dataset.artId || '';
+    const artNameValue = infoModuleNode.dataset.artName || '';
+    const artPriceValue = infoModuleNode.dataset.artPrice || '';
+
+    infoFormNode.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!contactEmailValue) {
+        return;
+      }
+
+      const formData = new FormData(infoFormNode);
+      const name = String(formData.get('name') || '').trim();
+      const email = String(formData.get('email') || '').trim();
+      const message = String(formData.get('message') || '').trim();
+
+      const subject = `Mas informacion obra ${artIdValue} - ${artNameValue}`;
+      const bodyLines = [
+        `Hola, quiero mas informacion de la obra: ${artNameValue} (ID ${artIdValue}).`,
+        `Precio publicado: ${artPriceValue}.`,
+        '',
+        `Nombre: ${name}`,
+        `Correo: ${email}`,
+        '',
+        'Mensaje:',
+        message || 'Sin mensaje adicional.',
+      ];
+
+      const href = `mailto:${contactEmailValue}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+      window.location.href = href;
+    });
+  }
+</script>
+
 <style>
   .bg-slate-800 {
-    background-color:  #1e293b ;
+    background-color: #1e293b;
+  }
+
+  .shop-btn,
+  .shop-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid #111827;
+    transition: all 0.2s ease;
+  }
+
+  .shop-btn {
+    color: #fff;
+    background: #111827;
+  }
+
+  .shop-btn:hover {
+    background: #0f172a;
+  }
+
+  .shop-btn-secondary {
+    color: #111827;
+    background: #fff;
+  }
+
+  .shop-btn-secondary:hover {
+    background: #f8fafc;
   }
 </style>
